@@ -18,11 +18,15 @@ public class UserDaoService {
         users.add(new User(3,"um",new Date()));
 
     }
+    
+    
 
     public List<User> findAll(){
 
         return users;
     }
+    
+    
 
     public User save(User user){
         if (user.getId() == null){
@@ -34,6 +38,8 @@ public class UserDaoService {
         users.add(user);
         return user;
     }
+    
+    
 
     public User findone(int id) {
         for (User user: users) {
