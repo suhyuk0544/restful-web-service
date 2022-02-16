@@ -17,7 +17,7 @@ public class UserController {
 //        return index.html;
 //    }
 
-    private UserDaoService service;
+    private final UserDaoService service;
 
     public UserController(UserDaoService service) {
 
@@ -51,7 +51,28 @@ public class UserController {
                 .buildAndExpand(savedUser.getId())
                 .toUri();
         return ResponseEntity.created(location).build();
+    }
+
+    @DeleteMapping("/userdelete/{id}")
+    public void userdelete(@PathVariable int id){
+
+        User user = service.deleteuser(id);
+
+        if (user == null){
+            throw new UserNotFoundException(String.format("ID[%s] Not Found", id));
+        }
+//        else if (user.getId() == id){
+//            throw new
+//
+//        }
+
+
 
     }
+
+
+
+
+
 
 }
