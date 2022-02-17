@@ -61,12 +61,7 @@ public class UserController {
         if (user == null){
             throw new UserNotFoundException(String.format("ID[%s] Not Found", id));
         }
-//        else if (user.getId() == id){
-//            throw new
-//
-//        }
         return String.format("ID[%s] Completed Delete", id);
-
 
 
     }
